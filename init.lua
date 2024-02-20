@@ -339,7 +339,8 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
+vim.o.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -364,6 +365,9 @@ vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
+
+vim.opt.colorcolumn = "120"
+-- vim.opt.textwidth = 80
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -488,7 +492,19 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = {
+      'bash',
+      'css',
+      'go',
+      'html',
+      'java',
+      'javascript',
+      'lua',
+      'ruby',
+      'typescript',
+      'vim',
+      'vimdoc',
+    },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
