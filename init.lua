@@ -325,6 +325,15 @@ require('lazy').setup({
   -- require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
 
+  {
+    "thePrimeagen/vim-be-good",
+    -- cmd = "VimBeGood",
+    lazy = false,
+    -- config = function()
+    --   require("VimBeGood").setup {}
+    -- end,
+  },
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
   --    up-to-date with whatever is in the kickstart repo.
@@ -352,6 +361,8 @@ vim.o.mouse = 'a'
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
+
+vim.o.relativenumber = true
 
 -- Enable break indent
 vim.o.breakindent = true
