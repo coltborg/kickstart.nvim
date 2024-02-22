@@ -263,6 +263,17 @@ require('lazy').setup({
   --   end,
   -- },
 
+  -- https://github.com/folke/todo-comments.nvim
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -377,8 +388,12 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
-vim.opt.colorcolumn = "120"
--- vim.opt.textwidth = 80
+local columnSize = 120
+vim.opt.colorcolumn = tostring(columnSize)
+vim.opt.textwidth = columnSize
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.columns = columnSize
 
 -- Decrease update time
 vim.o.updatetime = 250
