@@ -424,6 +424,12 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
+-- Indentation
+vim.o.listchars = 'space:.,tab:->'
+vim.o.list = true
+vim.o.expandtab = true
+vim.o.smartindent = true
+
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
